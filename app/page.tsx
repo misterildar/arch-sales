@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import Script from 'next/script';
+import ContactForm from './components/ContactForm';
 
 const svg = {
   bloom: '/svg/bg-bloom.svg',
@@ -167,10 +166,9 @@ export default function Home() {
           </div>
         </div>
 
-        <Script id="amoforms-inline-script">
-          {`!function(a,m,o,c,r,m){a[o+c]=a[o+c]||{setMeta:function(p){this.params=(this.params||[]).concat([p])}},a[o+r]=a[o+r]||function(f){a[o+r].f=(a[o+r].f||[]).concat([f])},a[o+r]({id:"1665974",hash:"350f05c45923f19c2f669fef8377fcd0",locale:"ru"}),a[o+m]=a[o+m]||function(f,k){a[o+m].f=(a[o+m].f||[]).concat([[f,k]])}}(window,0,"amo_forms_","params","load","loaded");`}
-        </Script>
-        <Script id="amoforms_script_1665974" async={true} charSet="utf-8" src="https://forms.amocrm.ru/forms/assets/js/amoforms.js?1775382880" />
+        <div className='w-full flex justify-center mt-12'>
+          <ContactForm />
+        </div>
       </main>
 
       {/* Мобильная навигация */}
