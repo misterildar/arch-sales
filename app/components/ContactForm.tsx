@@ -1,74 +1,40 @@
-'use client';
+"use client";
+import { useEffect, useRef } from "react";
 
-import { useState } from 'react';
+export default function AmoForm() {
+  const formContainerRef = useRef<HTMLDivElement>(null);
 
-export default function ContactForm() {
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
-  const [status, setStatus] = useState('');
+  useEffect(() => {
+    // Проверка, чтобы скрипт не добавлялся дважды при перерендере в React
+    if (
+      formContainerRef.current &&
+      formContainerRef.current.children.length === 0
+    ) {
+      // 1. Создаем inline-скрипт настроек
+      const inlineScript = document.createElement("script");
+      inlineScript.innerHTML = `!function(a,m,o,c,r,m){a[o+c]=a[o+c]||{setMeta:function(p){this.params=(this.params||[]).concat([p])}},a[o+r]=a[o+r]||function(f){a[o+r].f=(a[o+r].f||[]).concat([f])},a[o+r]({id:"1665974",hash:"350f05c45923f19c2f669fef8377fcd0",locale:"ru"}),a[o+m]=a[o+m]||function(f,k){a[o+m].f=(a[o+m].f||[]).concat([[f,k]])}}(window,0,"amo_forms_","params","load","loaded");`;
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setStatus('Sending...');
+      // 2. Создаем внешний скрипт
+      const externalScript = document.createElement("script");
+      externalScript.id = "amoforms_script_1665974";
+      externalScript.async = true;
+      externalScript.charset = "utf-8";
+      externalScript.src =
+        "https://forms.amocrm.ru/forms/assets/js/amoforms.js?1775472238";
 
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ name, phone, message }),
-    });
-
-    if (res.ok) {
-      setStatus('Message sent successfully!');
-      setName('');
-      setPhone('');
-      setMessage('');
-    } else {
-      setStatus('Failed to send message.');
+      // Внедряем скрипты в наш конкретный div-контейнер
+      formContainerRef.current.appendChild(inlineScript);
+      formContainerRef.current.appendChild(externalScript);
     }
-  };
+  }, []);
 
   return (
-    <form onSubmit={handleSubmit} className='w-full max-w-lg space-y-6'>
-      <h2 className='text-3xl font-bold text-center text-white'>
-        Свяжитесь с нами
-      </h2>
-      <div className='flex flex-col space-y-4'>
-        <input
-          type='text'
-          placeholder='Имя'
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-          className='bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-[#00A3FF]'
-        />
-
-        <input
-          type='tel'
-          placeholder='Телефон'
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          required
-          className='bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-[#00A3FF]'
-        />
-        <textarea
-          placeholder='Сообщение'
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          required
-          rows={4}
-          className='bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-[#00A3FF]'
-        />
-      </div>
-      <button
-        type='submit'
-        className='w-full min-h-[50px] items-center justify-center rounded-xl bg-[#00A3FF] px-12 text-[17px] font-bold text-black shadow-[0_0_36px_rgba(0,163,255,0.6),0_0_90px_rgba(0,163,255,0.18)] transition hover:bg-[#33b4ff]'
-      >
-        Отправить
-      </button>
-      {status && <p className='text-center text-white mt-4'>{status}</p>}
-    </form>
+    <div className="w-full flex justify-center">
+      {/* Контейнер, внутри которого отрисуется форма из amoCRM */}
+      <div
+        ref={formContainerRef}
+        className="w-full max-w-md min-h-[400px]"
+      ></div>
+    </div>
   );
 }
