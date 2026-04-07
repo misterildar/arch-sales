@@ -19,20 +19,14 @@ export default function Home() {
         </ul>
       </nav>
 
-      <main className="max-w-6xl mx-auto px-6 py-20 flex flex-col items-center">
+      <main className="max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-20 flex flex-col items-center">
         <div className="text-center mb-16 space-y-8">
-          <h1 className="text-5xl md:text-7xl font-bold text-blue-400 tracking-widest uppercase">
+          <h1 className="text-4xl md:text-7xl font-bold text-blue-400 tracking-tight bg-clip-text">
             Архитектура Продаж
           </h1>
-          <h2 className="text-5xl md:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
+          <h2 className="text-4xl md:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
             Внедряем amoCRM
           </h2>
-          <h3 className="text-3xl font-bold text-blue-400">
-            Помогаем навести порядок в продажах
-          </h3>
-          <h3 className="text-3xl font-bold text-blue-400">
-            и вернуть упущенных клиентов.
-          </h3>
         </div>
 
         <div className="w-full max-w-6xl relative mb-24 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(59,130,246,0.2)] border border-gray-800">
@@ -49,18 +43,15 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center mb-24 ">
-          <div className="flex flex-col">
-            <h3 className="text-3xl font-semibold mb-6">
-              Не обещаем удвоение продаж.
-            </h3>
-            <h3 className="text-3xl font-semibold mb-6">
-              Помогаем вернуть упущенных клиентов из недозвонов, текущей базы и
-              старых обращений.
+        <div className="flex flex-col md:flex-row items-center justify-center mb-24 ">
+          <div className="flex flex-col md:flex-1">
+            <h3 className="text-2xl md:text-5xl font-semibold  text-center md:text-left">
+              Помогаем навести порядок в продажах и вернуть упущенных клиентов
+              из недозвонов, текущей базы и старых обращений.
             </h3>
           </div>
 
-          <div className="max-w-500 rounded-2xl overflow-hidden  flex items-center justify-center border border-gray-800">
+          <div className="max-w-xs md:max-w-md rounded-2xl overflow-hidden  flex items-center justify-center border border-gray-800 md:flex-1">
             <Image
               width={500}
               height={500}
@@ -71,7 +62,7 @@ export default function Home() {
           </div>
         </div>
 
-        <section className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16 bg-[#15151e] p-10 md:p-16 rounded-3xl border border-gray-800">
+        <section className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16 bg-[#15151e] p-8 md:p-16 rounded-3xl border border-gray-800">
           <div className="space-y-8 flex flex-col justify-center">
             <h3 className="text-3xl font-semibold mb-6">Контакты</h3>
 
