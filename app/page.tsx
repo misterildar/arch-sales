@@ -70,14 +70,18 @@ export default function Home() {
               <p className="text-gray-400 text-sm uppercase tracking-wider mb-1">
                 Телефон
               </p>
-              <p className="text-2xl font-medium">+7 (919) 123-4567</p>
+              <p className="text-2xl font-medium">+7 917 394 00 93</p>
             </div>
 
             <div className="pt-6 flex gap-6">
-              <Link href={"https://max.ru/"}>
+              <Link
+                href={
+                  "https://max.ru/u/f9LHodD0cOIjhrrIG_UVc7EmZOeMITpQXEQlBDH_5LZ3qcF0qEidlxI3fDw"
+                }
+              >
                 <Image src="/max-logo.svg" width={48} height={48} alt="max" />
               </Link>
-              <Link href={"https://vk.com/"}>
+              <Link href={"https://vk.com/arch_sales"}>
                 <Image
                   src="/vk-logo.svg.webp"
                   width={48}
