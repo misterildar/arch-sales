@@ -44,7 +44,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-center mb-24 ">
-          <div className="flex flex-col md:flex-1">
+          <div className="flex flex-col md:flex-1 mb-4">
             <h3 className="text-2xl md:text-5xl font-semibold  text-center md:text-left">
               Помогаем навести порядок в продажах и вернуть упущенных клиентов
               из недозвонов, текущей базы и старых обращений.
@@ -80,6 +80,22 @@ export default function Home() {
                 }
               >
                 <Image src="/max-logo.svg" width={48} height={48} alt="max" />
+              </Link>
+              <Link href={"https://t.me/mister_ildar"}>
+                <Image
+                  src="/telegram-logo.png"
+                  width={48}
+                  height={48}
+                  alt="telegram"
+                />
+              </Link>
+              <Link href={"https://wa.me/79173940093"}>
+                <Image
+                  src="/whatsapp.svg"
+                  width={48}
+                  height={48}
+                  alt="whatsapp"
+                />
               </Link>
               <Link href={"https://vk.com/arch_sales"}>
                 <Image
