@@ -5,7 +5,7 @@ import AmoForm from "./components/ContactForm";
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#0d0d12] text-white font-sans overflow-x-hidden">
-      <nav className="w-full flex justify-center py-6 bg-[#15151e] border-b border-gray-800">
+      {/* <nav className="w-full flex justify-center py-6 bg-[#15151e] border-b border-gray-800">
         <ul className="flex gap-12 text-sm uppercase tracking-wider text-gray-300">
           <li className="hover:text-white cursor-pointer transition-colors">
             Статьи
@@ -17,7 +17,7 @@ export default function Home() {
             Контакты
           </li>
         </ul>
-      </nav>
+      </nav> */}
 
       <main className="max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-20 flex flex-col items-center">
         <div className="text-center mb-16 space-y-8">
@@ -70,18 +70,20 @@ export default function Home() {
               <p className="text-gray-400 text-sm uppercase tracking-wider mb-1">
                 Телефон
               </p>
-              <p className="text-2xl font-medium">+7 917 394 00 93</p>
+              <p className="text-2xl font-medium">+7 927 467 09 10</p>
             </div>
 
             <div className="pt-6 flex gap-6">
+              {/* Max */}
               <Link
                 href={
-                  "https://max.ru/u/f9LHodD0cOIjhrrIG_UVc7EmZOeMITpQXEQlBDH_5LZ3qcF0qEidlxI3fDw"
+                  "https://max.ru/u/f9LHodD0cOJ-_3mcJC3otLKrTGpaqPYtp_BO1XC2YgbHMhcQCb217zI8YA0"
                 }
               >
                 <Image src="/max-logo.svg" width={48} height={48} alt="max" />
               </Link>
-              <Link href={"https://t.me/mister_ildar"}>
+              {/* Telegram */}
+              <Link href={"https://t.me/ildar_arch_sales"}>
                 <Image
                   src="/telegram-logo.png"
                   width={48}
@@ -89,7 +91,8 @@ export default function Home() {
                   alt="telegram"
                 />
               </Link>
-              <Link href={"https://wa.me/79173940093"}>
+              {/* WhatsApp */}
+              <Link href={"https://wa.me/79274670910"}>
                 <Image
                   src="/whatsapp.svg"
                   width={48}
